@@ -15,10 +15,10 @@ public class JsoupFetcherService implements FetcherService {
 
     Document doc = Jsoup.connect(url).get();
     log(doc.title());
-    Elements newsHeadlines = doc.select("a");
+    Elements newsHeadlines = doc.select("img");
     for (Element headline : newsHeadlines) {
       log("%s\n\t%s",
-          headline.attr("title"), headline.absUrl("href"));
+          headline.attr("class"), headline.absUrl("src"));
     }
     return doc.parser().toString();
   }
