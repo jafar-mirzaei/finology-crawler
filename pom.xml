@@ -74,6 +74,13 @@
       <artifactId>guava</artifactId>
       <version>28.1-jre</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hibernate.dialect/sqlite-dialect -->
+    <dependency>
+      <groupId>com.zsoltfabok</groupId>
+      <artifactId>sqlite-dialect</artifactId>
+      <version>1.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>
