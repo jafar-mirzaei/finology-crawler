@@ -1,17 +1,16 @@
 package my.finilogy.crawlertest.persistance;
 
+import org.checkerframework.common.aliasing.qual.Unique;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "PRODUCT")
-public class ProductEntity {
+public class ProductEntity extends BaseEntity {
 
   private long id;
   private String name;
@@ -19,16 +18,6 @@ public class ProductEntity {
   private BigDecimal price;
   private String details;
   private String extraInformation;
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  public long getId() {
-    return id;
-  }
-
-  public void setId(final long id) {
-    this.id = id;
-  }
 
   @Column(name = "name", length = 150)
   public String getName() {
@@ -39,6 +28,7 @@ public class ProductEntity {
     this.name = name;
   }
 
+  @Unique
   @Column(name = "URL")
   public String getUrl() {
     return url;

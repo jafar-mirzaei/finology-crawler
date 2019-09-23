@@ -1,17 +1,23 @@
 package my.finilogy.crawlertest.crawler;
 
 
+import my.finilogy.crawlertest.persistance.ProductRepository;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
 @Service
 public class JsoupFetcherService implements FetcherService {
+  @Autowired
+  private ProductRepository productRepository;
+  
   @Override public String fetchPage(final String url) throws IOException {
+
 
     Document doc = Jsoup.connect(url).get();
     log(doc.title());
