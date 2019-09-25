@@ -16,26 +16,26 @@ import javax.persistence.Version;
 
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
-  private Long id;
-  private Long version;
+  private Integer id;
+  private Integer version;
 
   @Id
   @Column
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(final Long id) {
+  public void setId(final Integer id) {
     this.id = id;
   }
 
   @Version
-  public Long getVersion() {
+  public Integer getVersion() {
     return version;
   }
 
-  public void setVersion(final Long version) {
+  public void setVersion(final Integer version) {
     this.version = version;
   }
 }

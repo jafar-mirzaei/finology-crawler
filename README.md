@@ -20,3 +20,24 @@ This is the basic functionality expected of your script but there are a few othe
 2. The code must be well-structured and easy to understand
 
 Beyond fulfilling the basic functionality requirements, you have the freedom to exhibit your other skills if you wish to. You may choose to cache the crawled pages so that you can regenerate the product db faster when you run the program more than once, you can choose a different method of formatting or sorting, or presenting your output. You may opt to use threads, you may write tests to ensure your program does the things expected of it, you may implement good logging, deployment or packaging skills with your program, etc.
+
+
+
+create table product
+(
+	id INTEGER not null
+		constraint product_pk
+			primary key autoincrement,
+	url String not null,
+	name String,
+	price REAL,
+	DETAILS String,
+	extra_inf String
+);
+
+create unique index product_id_uindex
+	on product (id);
+
+create unique index product_url_uindex
+	on product (url);
+

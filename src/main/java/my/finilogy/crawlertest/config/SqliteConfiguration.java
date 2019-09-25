@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 public class SqliteConfiguration {
   @Autowired Environment env;
 
-  @Bean
+/*  @Bean
   public DataSource dataSource() {
     final DriverManagerDataSource dataSource = new DriverManagerDataSource();
     dataSource.setDriverClassName(env.getProperty("driverClassName"));
@@ -20,5 +20,5 @@ public class SqliteConfiguration {
     dataSource.setUsername(env.getProperty("user"));
     dataSource.setPassword(env.getProperty("password"));
     return dataSource;
-  }
+  }*/
 }
